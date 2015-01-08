@@ -3,7 +3,7 @@ regextools
 
 [![Build Status](https://travis-ci.org/trinker/regextools.png?branch=master)](https://travis-ci.org/trinker/regextools)
 [![Coverage Status](https://coveralls.io/repos/trinker/regextools/badge.png)](https://coveralls.io/r/trinker/regextools)
-[![DOI](https://zenodo.org/badge/5398/trinker/regextools.svg)](http://dx.doi.org/10.5281/zenodo.13768)
+[![DOI](https://zenodo.org/badge/5398/trinker/regextools.svg)](http://dx.doi.org/10.5281/zenodo.13804)
 
 <img src="inst/regextools_logo/r_regextools.png" width="20%", alt="">  
 
