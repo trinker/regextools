@@ -1,5 +1,5 @@
 library("testthat")
-library("regexegen")
+library("regextools")
 
 
-test_check("regexegen")
+test_check("regextools")

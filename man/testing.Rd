@@ -33,7 +33,7 @@ results.  These functions are useful for unit testing of regular expressions.
 }
 \details{
 These functions are inspired by Hadely Wickham's \pkg{testthat}
-package.  They can be used with \code{\link[regexegen]{test_library}} to test
+package.  They can be used with \code{\link[regextools]{test_library}} to test
 that regular expressions are extracting, removing, and splitting as
 exprected.  The user may create their own tests and utilize
 \code{\link[base]{all.equal}} to ensure the expression is acting as desired.
@@ -51,7 +51,7 @@ test_split("(?<=[.?!])\\\\s+", "I see! When? Oh that's good.",
 \code{\link[base]{gsub}},
 \code{\link[base]{gregexpr}},
 \code{\link[base]{regmatches}},
-\code{\link[regexegen]{test_library}}
+\code{\link[regextools]{test_library}}
 }
 \keyword{extract}
 \keyword{remove}

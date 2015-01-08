@@ -15,7 +15,7 @@
 #' \code{input} and desired \code{output}.
 #' @keywords test extract remove
 #' @details These functions are inspired by Hadely Wickham's \pkg{testthat} 
-#' package.  They can be used with \code{\link[regexegen]{test_library}} to test 
+#' package.  They can be used with \code{\link[regextools]{test_library}} to test 
 #' that regular expressions are extracting, removing, and splitting as 
 #' exprected.  The user may create their own tests and utilize 
 #' \code{\link[base]{all.equal}} to ensure the expression is acting as desired.
@@ -25,7 +25,7 @@
 #' \code{\link[base]{gsub}},
 #' \code{\link[base]{gregexpr}},
 #' \code{\link[base]{regmatches}},
-#' \code{\link[regexegen]{test_library}}
+#' \code{\link[regextools]{test_library}}
 #' @examples
 #' test_extract("\\w+", "I like candy.", list(c("I", "like", "candy")))
 #' 
