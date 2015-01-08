@@ -1,0 +1,28 @@
+NEWS
+====
+
+Versioning
+----------
+
+Releases will be numbered with the following semantic versioning format:
+
+<major>.<minor>.<patch>
+
+And constructed with the following guidelines:
+
+* Breaking backward compatibility bumps the major (and resets the minor 
+  and patch)
+
+* New additions without breaking backward compatibility bumps the minor 
+  (and resets the patch)
+
+* Bug fixes and misc changes bumps the patch
+
+
+
+CHANGES IN regextools VERSION 0.0.1
+----------------------------------------------------------------
+
+* The first CRAN installation of the regextools package
+
+* Package designed to provide tools to maintain regular expression libraries.  Users can create documentation, conduct unit testing, and compile a regular expression library in ways that are similar to the way **devtools** and **roxygen2** have standardized and streamlined package management.

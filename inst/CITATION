@@ -1,0 +1,16 @@
+citHeader("To cite regextools in publications, please use:")
+
+
+citEntry(entry = "manual",
+    title = "{regextools}: A Regular Expression Documentation, Testing, and Storage Framework",
+    author = "Tyler W. Rinker",
+    organization = "University at Buffalo/SUNY",
+    address = "Buffalo, New York",
+    note = "version 0.0.1",
+    year = "2015",
+    url = "http://github.com/trinker/regextools", 
+    textVersion  = paste("Rinker, T. W. (2015).",
+        "qregextools: Regular Expression Removal, Extraction, and Replacement Tools.",
+        "version 0.0.1. University at Buffalo. Buffalo, New York.",
+        "http://github.com/trinker/regextools")
+)
