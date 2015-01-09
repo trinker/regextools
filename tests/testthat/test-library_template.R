@@ -16,6 +16,5 @@ test_that("library_template creates a library package with correct components",{
 
 })
 
-})
 
 
