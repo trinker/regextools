@@ -97,6 +97,8 @@ library_template <- function(path, name = getOption("name"),
         suppressWarnings(dir.create(qpath("tests")))
         suppressWarnings(dir.create(qpath("tests/testthat")))
         cat(sprintf(testthat_temp, package, package), file=qpath("tests/testthat.R"))
+        file.copy(system.file("templates/test-sample.R", package = "regextools"),
+            qpath("tests/testthat"))
     }
 
     ## Generate travis

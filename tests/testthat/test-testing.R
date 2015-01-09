@@ -1,19 +1,28 @@
-context("Checking library_template")
+context("Checking testing functions")
 
-test_that("library_template creates a library package with correct components",{
+test_that("test_extract returns logical",{
     
-    regex_lib <- file.path(tempdir(), "DELETE_ME")
-    suppressMessages(library_template(regex_lib))
-    expect_true(file.exists(regex_lib))
-    expect_true(file.exists(file.path(regex_lib, "README.md")))
-    expect_true(file.exists(file.path(regex_lib, "tests")))
-    expect_true(file.exists(file.path(regex_lib, "tests/testthat")))
-    expect_true(file.exists(file.path(regex_lib, "tests/testthat.R")))
-    expect_true(file.exists(file.path(regex_lib, "DESCRIPTION")))
-    expect_true(file.exists(file.path(regex_lib, "NEWS")))
-    expect_true(file.exists(file.path(regex_lib, "travis.yml")))
-    unlink(regex_lib, recursive = TRUE, force = FALSE)
+    expect_true(test_extract("\\w+", "I like candy.", list(c("I", "like", "candy"))))
+    expect_equal(test_extract("\\w+", "I like candy.", list(c("I", "xxx", "candy"))),
+        "Component 1: 1 string mismatch")
 
+})
+
+test_that("test_remove returns logical",{
+    
+    expect_true(test_remove("^\\s+|\\s+$", " I like candy ", "I like candy"))
+    expect_equal(test_remove("^\\s+|\\s+$", " I like candy ", "I xxx candy"),
+        "1 string mismatch")
+
+})
+
+test_that("test_split returns logical",{
+    
+    expect_true(test_split("(?<=[.?!])\\s+", "I see! When? Oh that's good.", 
+        list(c("I see!", "When?", "Oh that's good."))))    
+    expect_equal(test_split("(?<=[.?!])\\s+", "I see! When? Oh that's good.", 
+        list(c("I see!", "xxx", "Oh that's good."))),
+        "Component 1: 1 string mismatch") 
 })
 
 
