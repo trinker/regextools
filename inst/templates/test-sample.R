@@ -18,15 +18,21 @@ test_that("MY_REGEX extracts words",{
 
 	})
 
-test_that("test_remove returns logical",{
+test_that("MY_REGEX removes words",{
     
     expect_true(test_remove(MY_REGEX, " I like candy ", "    "))
 
 })
 
-test_that("test_split returns logical",{
+test_that("MY_REGEX splits words",{
     
     expect_true(test_split(MY_REGEX, " I like candy ", list(c(" ", " ", " ", " "))))    
+
+})
+
+test_that("MY_REGEX is valid",{
+    
+    expect_true(test_is.regex(MY_REGEX))    
 
 })
 

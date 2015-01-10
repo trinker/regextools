@@ -1,7 +1,8 @@
-#' Does Expression Extract/Remove/Split as Expected?
+#' Is Expression Valid and Does It Extract/Remove/Split as Expected?
 #' 
-#' A logical test of a regular expression's extraction, removal, splitting 
-#' results.  These functions are useful for unit testing of regular expressions.
+#' A logical test of a regular expression's validity, extraction, removal, 
+#' splitting results.  These functions are useful for unit testing of regular 
+#' expressions.
 #' 
 #' @param regex A regular expression to test.
 #' @param input The intput string(s) to extract/remove/split from.
@@ -15,17 +16,17 @@
 #' \code{input} and desired \code{output}.
 #' @keywords test extract remove
 #' @details These functions are inspired by Hadely Wickham's \pkg{testthat} 
-#' package.  They can be used with \code{\link[regextools]{test_library}} to test 
-#' that regular expressions are extracting, removing, and splitting as 
-#' exprected.  The user may create their own tests and utilize 
-#' \code{\link[base]{all.equal}} to ensure the expression is acting as desired.
+#' package.  They can be used with \pkg{testthat} to test that regular 
+#' expressions are valid, extracting, removing, and splitting as expected.  The 
+#' user may create their own tests and utilize \code{\link[base]{all.equal}} to 
+#' ensure the expression is acting as desired.
 #' @export
 #' @rdname testing
 #' @seealso \code{\link[base]{all.equal}},
 #' \code{\link[base]{gsub}},
 #' \code{\link[base]{gregexpr}},
 #' \code{\link[base]{regmatches}},
-#' \code{\link[regextools]{test_library}}
+#'\code{\link[devtools]{test}}
 #' @examples
 #' test_extract("\\w+", "I like candy.", list(c("I", "like", "candy")))
 #' 
@@ -33,6 +34,8 @@
 #' 
 #' test_split("(?<=[.?!])\\s+", "I see! When? Oh that's good.", 
 #'     list(c("I see!", "When?", "Oh that's good."))) 
+#'     
+#' test_is.regex("\\w+")     
 test_extract <- function(regex, input, output){
 
     input2 <- regmatches(input, gregexpr(regex, input, perl = TRUE))
@@ -59,4 +62,12 @@ test_split <- function(regex, input, output){
 
 }
 
+
+#' @export
+#' @rdname testing
+test_is.regex <- function (regex) {
+    out <- suppressWarnings(try(gsub(regex, "", "hello", perl = TRUE), 
+        silent = TRUE))
+    ifelse(inherits(out, "try-error"), FALSE, TRUE)
+}
 
