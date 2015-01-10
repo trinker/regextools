@@ -37,13 +37,12 @@ You are welcome to:
 
 | Function             |  Description         |
 |----------------------|----------------------|
-| `check_library`  |  | 
-| `create_library`  |  | 
-| `create_package`  |   |
-| `document_library`  |  | 
-| `test_library`   |   |
-| `load_library`   |   |
-| `template_library`   |   |
+| `library_list`  |  |
+| `library_vignette`  |  | 
+| `library_template`   |   |
+| `test_extract`  |  | 
+| `test_remove`  |  | 
+| `test_split`  |   |    
 
 ## Examples
 

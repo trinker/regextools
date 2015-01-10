@@ -1,7 +1,8 @@
 | Function             |  Description         |
 |----------------------|----------------------|
-| `check_library`  |  | 
-| `create_library`  |  | 
-| `create_package`  |   |
+| `library_list`  |  |
 | `library_vignette`  |  | 
 | `library_template`   |   |
+| `test_extract`  |  | 
+| `test_remove`  |  | 
+| `test_split`  |   |    
