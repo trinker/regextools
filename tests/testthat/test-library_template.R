@@ -12,6 +12,8 @@ test_that("library_template creates a library package with correct components",{
     expect_true(file.exists(file.path(regex_lib, "DESCRIPTION")))
     expect_true(file.exists(file.path(regex_lib, "NEWS")))
     expect_true(file.exists(file.path(regex_lib, "travis.yml")))
+    expect_true(file.exists(file.path(regex_lib, "tests/testthat/test-sample.R")))
+    expect_true(file.exists(file.path(regex_lib, "R/sample.R")))     
     unlink(regex_lib, recursive = TRUE, force = FALSE)
 })
 
@@ -21,6 +23,7 @@ test_that("library_template creates a library package with correct components wh
     suppressMessages(library_template(regex_lib, 
         email = "tyler.rinker@gmail.com",
         github.user = "trinker", 
+        samples = FALSE,
         coverage = FALSE,
         name = c(first="Tyler", middle = "W.", last="Rinker")))    
     expect_true(file.exists(regex_lib))
@@ -31,6 +34,8 @@ test_that("library_template creates a library package with correct components wh
     expect_true(file.exists(file.path(regex_lib, "DESCRIPTION")))
     expect_true(file.exists(file.path(regex_lib, "NEWS")))
     expect_true(file.exists(file.path(regex_lib, "travis.yml")))
+    expect_false(file.exists(file.path(regex_lib, "tests/testthat/test-sample.R")))
+    expect_false(file.exists(file.path(regex_lib, "R/sample.R")))    
     unlink(regex_lib, recursive = TRUE, force = FALSE)
 })
 

@@ -33,6 +33,10 @@
 #' @param github.user The user's \href{https://github.com/}{GitHub} user name.  
 #' This can be set in the user's \code{options} in the \file{.Rprofile}; for example:  
 #' \code{options(github.user = "trinker")}.
+#' @param samples logical.  If \code{TRUE} a sample \file{.R} regular expression
+#' file will be placed in the \file{R} directory.  Additionally, if 
+#' \code{testthat = TRUE}, a sample \file{.R} unit test will be placed in the 
+#' \file{./tests/testthat} directory.
 #' @keywords template
 #' @export
 #' @examples
@@ -42,7 +46,7 @@
 library_template <- function(path, name = getOption("name"), 
     email = getOption("email"), news = TRUE, readme = TRUE, rstudio = TRUE, 
     gitignore = TRUE, testthat = TRUE, travis = TRUE, coverage = TRUE, 
-    github.user = getOption("github.user")){
+    github.user = getOption("github.user"), samples = TRUE){
 
     ## Quick path by supplying file only
     qpath <- pathfix(path)
@@ -97,8 +101,10 @@ library_template <- function(path, name = getOption("name"),
         suppressWarnings(dir.create(qpath("tests")))
         suppressWarnings(dir.create(qpath("tests/testthat")))
         cat(sprintf(testthat_temp, package, package), file=qpath("tests/testthat.R"))
-        file.copy(system.file("templates/test-sample.R", package = "regextools"),
-            qpath("tests/testthat"))
+        if (samples) {
+            file.copy(system.file("templates/test-sample.R", 
+                package = "regextools"), qpath("tests/testthat"))
+        }
     }
 
     ## Generate travis
@@ -139,6 +145,12 @@ library_template <- function(path, name = getOption("name"),
         news_temp <- sprintf(readLines(news_path), package)
         cat(paste(news_temp, collapse="\n"), file=qpath("NEWS"))
     }
+    
+    ## Add .R sample in R directory
+    if (samples) {
+        file.copy(system.file("templates/sample.R", 
+            package = "regextools"), qpath("R"))
+    }    
     message("Regular Expression Library Template Created!")
     invisible(TRUE)
 }

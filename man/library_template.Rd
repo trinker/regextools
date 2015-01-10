@@ -6,7 +6,7 @@
 library_template(path, name = getOption("name"), email = getOption("email"),
   news = TRUE, readme = TRUE, rstudio = TRUE, gitignore = TRUE,
   testthat = TRUE, travis = TRUE, coverage = TRUE,
-  github.user = getOption("github.user"))
+  github.user = getOption("github.user"), samples = TRUE)
 }
 \arguments{
 \item{path}{location to create new regular expression library package. The
@@ -48,6 +48,11 @@ information will be added to the \file{travis.yml}.}
 \item{github.user}{The user's \href{https://github.com/}{GitHub} user name.
 This can be set in the user's \code{options} in the \file{.Rprofile}; for example:
 \code{options(github.user = "trinker")}.}
+
+\item{samples}{logical.  If \code{TRUE} a sample \file{.R} regular expression
+file will be placed in the \file{R} directory.  Additionally, if
+\code{testthat = TRUE}, a sample \file{.R} unit test will be placed in the
+\file{./tests/testthat} directory.}
 }
 \description{
 This function creates a package template to manage regular expressions.  It
