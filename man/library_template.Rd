@@ -14,11 +14,11 @@ last component of the path will be used as the package name.}
 
 \item{name}{A named vector that minimally contains the user's first and last
 name (e.g., \code{c(first="Tyler", last="Rinker"))}).  This can be set in the
-user's \code{options} in the \file{.Rprofile}; for example:
+user's \code{options} in the \file{.Rprofile}; for example: \cr
 \code{options(name = c(first="Tyler", middle = "W.", last="Rinker"))}.}
 
 \item{email}{An email address to use for \bold{CRAN} maintainer.  This can be
-set in the user's \code{options} in the \file{.Rprofile}; for example:
+set in the user's \code{options} in the \file{.Rprofile}; for example: \cr
 \code{options(email = "tyler.rinker@gmail.com")}.}
 
 \item{news}{logical.  If \code{TRUE} a \file{NEWS} file is generated.}
@@ -46,7 +46,8 @@ file is generated.  For more on managing a \file{travis.yml} with
 information will be added to the \file{travis.yml}.}
 
 \item{github.user}{The user's \href{https://github.com/}{GitHub} user name.
-This can be set in the user's \code{options} in the \file{.Rprofile}; for example:
+This can be set in the user's \code{options} in the \file{.Rprofile}; for
+example:  \cr
 \code{options(github.user = "trinker")}.}
 
 \item{samples}{logical.  If \code{TRUE} a sample \file{.R} regular expression
@@ -60,7 +61,7 @@ utiizes a framework with defaults that expects the user to use \pkg{testthat}
 to test the library's reguar expressions.
 }
 \examples{
-\donttest{
+\dontrun{
 library_template("DELETE_ME")
 }
 }

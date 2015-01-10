@@ -1,0 +1,14 @@
+---
+title: "%s"
+author: "%s"
+date: "`r Sys.Date()`"
+output: 
+  rmarkdown::html_vignette
+    toc: true
+    theme: journal
+    number_sections: true
+vignette: >
+  %\VignetteIndexEntry{%s}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
+---

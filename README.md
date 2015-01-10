@@ -43,7 +43,7 @@ You are welcome to:
 | `test_extract`  | Unit Testing: Check if Regular Expression *Extracts* as Expected | 
 | `test_remove`  | Unit Testing: Check if Regular Expression *Removes* as Expected | 
 | `test_split`  |  Unit Testing: Check if Regular Expression *Splits* as Expected |
-| `test_is.regex` |  Unit Testing: Check if Regular Expression is *Valid* |   
+| `test_valid` |  Unit Testing: Check if Regular Expression is *Valid* |   
 
 ## Examples
 

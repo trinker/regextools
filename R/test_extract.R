@@ -18,8 +18,9 @@
 #' @details These functions are inspired by Hadely Wickham's \pkg{testthat} 
 #' package.  They can be used with \pkg{testthat} to test that regular 
 #' expressions are valid, extracting, removing, and splitting as expected.  The 
-#' user may create their own tests and utilize \code{\link[base]{all.equal}} to 
-#' ensure the expression is acting as desired.
+#' user may create their own tests and utilize \code{\link[base]{all.equal}} or
+#' \code{\link[testthat]{expect_equal}} to ensure the expression is acting as 
+#' desired.
 #' @export
 #' @rdname testing
 #' @seealso \code{\link[base]{all.equal}},
@@ -35,7 +36,7 @@
 #' test_split("(?<=[.?!])\\s+", "I see! When? Oh that's good.", 
 #'     list(c("I see!", "When?", "Oh that's good."))) 
 #'     
-#' test_is.regex("\\w+")     
+#' test_valid("\\w+")     
 test_extract <- function(regex, input, output){
 
     input2 <- regmatches(input, gregexpr(regex, input, perl = TRUE))
@@ -65,7 +66,7 @@ test_split <- function(regex, input, output){
 
 #' @export
 #' @rdname testing
-test_is.regex <- function (regex) {
+test_valid <- function (regex) {
     out <- suppressWarnings(try(gsub(regex, "", "hello", perl = TRUE), 
         silent = TRUE))
     ifelse(inherits(out, "try-error"), FALSE, TRUE)

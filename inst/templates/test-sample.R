@@ -16,7 +16,7 @@ test_that("MY_REGEX extracts words",{
     
     expect_true(test_extract(MY_REGEX, "I like candy.", list(c("I", "like", "candy"))))
 
-	})
+})
 
 test_that("MY_REGEX removes words",{
     
@@ -30,7 +30,7 @@ test_that("MY_REGEX splits words",{
 
 })
 
-test_that("MY_REGEX is valid",{
+test_that("MY_REGEX is a valid regular expression",{
     
     expect_true(test_is.regex(MY_REGEX))    
 

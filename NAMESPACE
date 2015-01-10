@@ -2,6 +2,6 @@
 
 export(library_template)
 export(test_extract)
-export(test_is.regex)
 export(test_remove)
 export(test_split)
+export(test_valid)

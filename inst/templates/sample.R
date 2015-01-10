@@ -3,6 +3,7 @@
 #' Find words.
 #' 
 #' @section Regex: TRUE
+#' @export
 #' @examples
 #' regmatches("I like candy.", gregexpr(MY_REGEX, "I like candy.", perl = TRUE))
 #' 

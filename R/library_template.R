@@ -8,10 +8,10 @@
 #' last component of the path will be used as the package name.
 #' @param name A named vector that minimally contains the user's first and last 
 #' name (e.g., \code{c(first="Tyler", last="Rinker"))}).  This can be set in the 
-#' user's \code{options} in the \file{.Rprofile}; for example:  
+#' user's \code{options} in the \file{.Rprofile}; for example: \cr
 #' \code{options(name = c(first="Tyler", middle = "W.", last="Rinker"))}.
 #' @param email An email address to use for \bold{CRAN} maintainer.  This can be 
-#' set in the user's \code{options} in the \file{.Rprofile}; for example:  
+#' set in the user's \code{options} in the \file{.Rprofile}; for example: \cr 
 #' \code{options(email = "tyler.rinker@@gmail.com")}.
 #' @param news logical.  If \code{TRUE} a \file{NEWS} file is generated.
 #' @param readme logical.  If code{TRUE} a \file{README.md} file is generated.
@@ -31,7 +31,8 @@
 #' \href{https://github.com/jimhester/covr}{\pkg{covr}} will be used.  This 
 #' information will be added to the \file{travis.yml}.  
 #' @param github.user The user's \href{https://github.com/}{GitHub} user name.  
-#' This can be set in the user's \code{options} in the \file{.Rprofile}; for example:  
+#' This can be set in the user's \code{options} in the \file{.Rprofile}; for 
+#' example:  \cr
 #' \code{options(github.user = "trinker")}.
 #' @param samples logical.  If \code{TRUE} a sample \file{.R} regular expression
 #' file will be placed in the \file{R} directory.  Additionally, if 
@@ -40,7 +41,7 @@
 #' @keywords template
 #' @export
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' library_template("DELETE_ME")
 #' }
 library_template <- function(path, name = getOption("name"), 
@@ -61,7 +62,7 @@ library_template <- function(path, name = getOption("name"),
         last <- name["last"]
         name <- paste(
             name["first"],
-            name[!names(name) %in% c("last", "first")],
+#            name[!names(name) %in% c("last", "first")],
             name["last"], collapse=" "
         )
     }
@@ -79,6 +80,7 @@ library_template <- function(path, name = getOption("name"),
             stop("`library_template` aborted")
         } else {
              unlink(path, recursive = TRUE, force = FALSE)
+             suppressWarnings(dir.create(path))
         }
     } else {
         suppressWarnings(dir.create(path))
@@ -89,7 +91,8 @@ library_template <- function(path, name = getOption("name"),
         package, 
         first, last, email, name, email,
         paste(R.Version()[c("major", "minor")], collapse="."),
-        ifelse(testthat, "\nSuggests: testthat", ""),
+        ifelse(testthat, "\nSuggests: regextools, testthat", 
+            "\nSuggests: regextools"),
         Sys.Date()
     ), file=qpath("DESCRIPTION"))    
 
@@ -178,7 +181,7 @@ DESCRIPTION_temp <- c(
 )
 
 
-testthat_temp <- "library(\"testthat\")\nlibrary(\"%s\")\n\ntest_check(\"%s\")" 
+testthat_temp <- "library(\"testthat\")\nlibrary(\"regextools\")\nlibrary(\"%s\")\n\ntest_check(\"%s\")" 
 
 travis_temp <- c(
     "language: c", 
