@@ -32,7 +32,7 @@ test_that("MY_REGEX splits words",{
 
 test_that("MY_REGEX is a valid regular expression",{
     
-    expect_true(test_is.regex(MY_REGEX))    
+    expect_true(test_valid(MY_REGEX))    
 
 })
 

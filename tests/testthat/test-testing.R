@@ -25,10 +25,10 @@ test_that("test_split returns logical",{
         "Component 1: 1 string mismatch") 
 })
 
-test_that("test_is.regex as expected",{
+test_that("test_valid as expected",{
     
-    expect_true(test_is.regex("\\w+"))    
-    expect_false(test_is.regex("(\\w")) 
+    expect_true(test_valid("\\w+"))    
+    expect_false(test_valid("(\\w")) 
 })
 
 
