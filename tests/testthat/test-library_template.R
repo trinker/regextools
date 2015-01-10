@@ -20,7 +20,8 @@ test_that("library_template creates a library package with correct components wh
     regex_lib <- file.path(tempdir(), "DELETE_ME")
     suppressMessages(library_template(regex_lib, 
         email = "tyler.rinker@gmail.com",
-        github.user = "trinker",
+        github.user = "trinker", 
+        coverage = FALSE,
         name = c(first="Tyler", middle = "W.", last="Rinker")))    
     expect_true(file.exists(regex_lib))
     expect_true(file.exists(file.path(regex_lib, "README.md")))
