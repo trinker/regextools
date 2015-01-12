@@ -14,20 +14,20 @@
 #' set in the user's \code{options} in the \file{.Rprofile}; for example: \cr 
 #' \code{options(email = "tyler.rinker@@gmail.com")}.
 #' @param news logical.  If \code{TRUE} a \file{NEWS} file is generated.
-#' @param readme logical.  If code{TRUE} a \file{README.md} file is generated.
-#' @param rstudio logical.  If code{TRUE} it is assumed 
+#' @param readme logical.  If \code{TRUE} a \file{README.md} file is generated.
+#' @param rstudio logical.  If \code{TRUE} it is assumed 
 #' \href{http://www.rstudio.com/}{RStudio} will be used and a \file{xxx.proj} 
 #' file is generated.
-#' @param gitignore logical.  If code{TRUE} a \file{.gitignore} file is generated.
-#' @param testthat logical.  If code{TRUE} it is assumed 
+#' @param gitignore logical.  If \code{TRUE} a \file{.gitignore} file is generated.
+#' @param testthat logical.  If \code{TRUE} it is assumed 
 #' \href{http://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf}{\pkg{testthat}} 
 #' will be used and a \file{test} subfolder with appropriate \pkg{testthat} 
 #' subdirectories and files will be created.
-#' @param travis logical.  If code{TRUE} it is assumed 
+#' @param travis logical.  If \code{TRUE} it is assumed 
 #' \href{https://travis-ci.org}{Travis-CI} will be used and a \file{travis.yml} 
 #' file is generated.  For more on managing a \file{travis.yml} with 
 #' \pkg{R} see: \url{https://github.com/craigcitro/r-travis}.
-#' @param coverage  logical.  If code{TRUE} it is assumed 
+#' @param coverage  logical.  If \code{TRUE} it is assumed 
 #' \href{https://github.com/jimhester/covr}{\pkg{covr}} will be used.  This 
 #' information will be added to the \file{travis.yml}.  
 #' @param github.user The user's \href{https://github.com/}{GitHub} user name.  
@@ -177,7 +177,8 @@ DESCRIPTION_temp <- c(
     "Depends: R (>= %s)%s",
     "Date: %s", 
     "License: What license is it under?", 
-    "LazyData: TRUE"
+    "LazyData: TRUE",
+    "Roxygen: list(wrap = FALSE)"
 )
 
 
