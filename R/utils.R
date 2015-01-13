@@ -171,3 +171,37 @@ right_brace_unkey <- function(x){
     gsub("[[RIGHTBRACEKEY2]]", "[}]", sub("[[RIGHTBRACEKEY1]]", "\\\\}", x))
 }
 
+
+
+# Visualize a Regular Expression
+# 
+# Visualize a regular expression via \url{https://www.debuggex.com}
+# 
+# @param pattern A regular expression pattern.
+# @param \ldots Ignored.
+# @references \url{http://stackoverflow.com/a/27574103/1000343}
+# @author Matthew Flickinger
+# @export
+# @examples
+# \donttest{
+# view_regex("(?<=foo)\\s+[a-z]{1,2}(?<=foo)")
+# }
+debuggex <- function(pattern, ...){
+
+    ## Code by Matthew Flickinger: http://www.matthewflickinger.com/
+    ## http://stackoverflow.com/a/27574103/1000343
+
+    payload <- list(title = "Untitled Regex",
+        description = "No description",
+        regex = pattern,
+        flavor = "python",
+        strFlags = "",
+        testString = "My test data",
+        unitTests = "[]",
+        share = TRUE)
+
+    rr <- httr::POST("https://www.debuggex.com/api/regex", 
+        body=lapply(payload, jsonlite::unbox), encode="json")
+    paste0("https://www.debuggex.com/r/", httr::content(rr)$token)
+}
+
