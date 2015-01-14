@@ -22,7 +22,6 @@ Description: regextools aims to provide tools to maintain regular expression
     compile a regular expression library in ways that are similar to the way
     devtools and roxygen2 have standardized and streamlined package management.
 License: GPL-2
-SystemRequirements: pandoc (>= 1.12.3) - http://johnmacfarlane.net/pandoc
 URL: http://trinker.github.com/regextools/
 BugReports: http://github.com/trinker/qregextools/issues
 Roxygen: list(wrap = FALSE)
