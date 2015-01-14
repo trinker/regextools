@@ -1,6 +1,6 @@
 context("Checking library_vignette")
 
-test_that("library_tvignette creates a .Rmd document",{
+test_that("library_vignette creates a .Rmd document",{
     
 #    temp1 <- tempdir()
 #    library_vignette(system.file("sample", package = "regextools"), file.path(temp1, "vignette"),
@@ -12,7 +12,7 @@ test_that("library_tvignette creates a .Rmd document",{
 })
 
 
-test_that("library_tvignette creates a .html & md document",{
+test_that("library_vignette creates a .html & md document",{
     
     #temp2 <- tempdir()
     #library_vignette(system.file("sample", package = "regextools"), file.path(temp2, "vignette"),

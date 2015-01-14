@@ -119,7 +119,7 @@ grab_regexpr <- function(path){
     pkg <- read.dcf(normalizePath(file.path(path, "DESCRIPTION")))[, "Package"]
     
     ## Get the regex names and paste with pacckage name
-    theregs <- grab_regexpr_info(path)[["regexpr"]]
+    theregs <- grab_regexpr_names(path)
     regxpr_char <- paste0("try(", paste(pkg, theregs, sep="::"), ")")
 
     ## Eval parse to try to return the regualr expression from their names
@@ -208,3 +208,31 @@ debuggex <- function(pattern, ...){
     paste0("https://www.debuggex.com/r/", httr::content(rr)$token)
 }
 
+
+grab_regexpr_names <- function(path){
+
+    ## make path to package man files
+    path2 <- file.path(path, "man")
+    man_files <- normalizePath(file.path(path2, dir(path2)))
+
+    out <- invisible(lapply(man_files, function(x){
+    
+        ## read in the .Rd man files and keep the ones that have Regex: TRUE tag
+        input <- suppressWarnings(readLines(x))  
+        regexdet <- grep("\\section{Regex}{", input, fixed=TRUE)                                                                                               
+        if (identical(integer(0), regexdet)) return(NULL)
+        regexdetTRUE <- grepl("^\\s* TRUE\\s*$", input[regexdet + 1])
+        if (!regexdetTRUE) return(NULL)
+
+        ## collapse the inpuut into one string   
+        input2 <- right_brace_key(paste(input, collapse="\n"))
+
+        ## set up a function generator to grab particular tex tags
+        grabber_ <- grabber(input2)
+
+        ## grab the usage tags    
+        right_brace_unkey(unlist(strsplit(gsub("^\n+|\n+$", "", grabber_("usage")), "\n")))
+ 
+    }))
+    unlist(out)
+}

@@ -39,7 +39,7 @@ Generate a regular expression library package vignette or Rmd/html/md document.
 \examples{
 \dontrun{
 library_vignette(system.file("sample", package = "regextools"), "vignette",
-    include.html=TRUE, document = FALSE, install = FALSE)
+    is.vignette = FALSE, include.html=TRUE, document = FALSE, install = FALSE)
 }
 }
 \seealso{
