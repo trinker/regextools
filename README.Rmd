@@ -1,11 +1,12 @@
 regextools
 =======
 
-## A regular expression documentation, testing, and storage framework.
-
 [![Build Status](https://travis-ci.org/trinker/regextools.png?branch=master)](https://travis-ci.org/trinker/regextools)
 [![Coverage Status](https://coveralls.io/repos/trinker/regextools/badge.png?branch=master)](https://coveralls.io/r/trinker/regextools?branch=master)
 [![DOI](https://zenodo.org/badge/5398/trinker/regextools.svg)](http://dx.doi.org/10.5281/zenodo.13804)
+
+## A regular expression documentation, testing, and storage framework.
+
 
 <img src="inst/regextools_logo/r_regextools.png" width="20%", alt="">  
 
