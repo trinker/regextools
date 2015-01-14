@@ -1,6 +1,6 @@
-#' Title
+#' Regular Expression Library Documentation
 #' 
-#' Description
+#' Generate a regular expression library package vignette or Rmd/html/md document.
 #' 
 #' @param path The path to the regular expression library package.
 #' @param out The directory to output the  documents.
