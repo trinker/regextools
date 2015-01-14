@@ -6,12 +6,12 @@
 \usage{
 library_vignette(path, out = file.path(path, "vignette"),
   is.vignette = TRUE, include.html = !is.vignette, include.md = FALSE,
-  theme = "cerulean", iframe = FALSE, ...)
+  theme = "cerulean", iframe = FALSE, quiet = TRUE, ...)
 }
 \arguments{
 \item{path}{The path to the regular expression library package.}
 
-\item{out}{The directory to output the  documents.}
+\item{out}{The directory to output the documents.}
 
 \item{is.vignette}{logical.  Is this an actual package vignette or rendered
 html/md reference document.}
@@ -27,6 +27,9 @@ is generated.}
 
 \item{iframe}{logical If \code{TRUE} the \href{https://www.debuggex.com/}{Debuggex}
 is included as an iframe rather than a link.}
+
+\item{quiet}{logical.  If \code{FALSE} \code{\link[rmarkdown]{render}} does
+not print to the console.}
 
 \item{\ldots}{Other arguments passed to internal functions.}
 }

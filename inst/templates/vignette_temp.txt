@@ -7,6 +7,7 @@ output:
     toc: true
     theme: %s
     number_sections: true
+    toc_depth: 1
 vignette: >
   %s\VignetteIndexEntry{%s}
   %s\VignetteEngine{knitr::rmarkdown}

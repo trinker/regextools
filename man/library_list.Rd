@@ -2,30 +2,38 @@
 % Please edit documentation in R/library_list.R
 \name{library_list}
 \alias{library_list}
-\title{Regular Expression Minimal .rda Library}
+\title{Generate Regular Expression .rda}
 \usage{
 library_list(path, out = NULL, ...)
 }
 \arguments{
 \item{path}{The path to the regular expression library package.}
 
-\item{out}{The directory to output the  documents.}
+\item{out}{The file path to output the .rda file (see
+\code{\link[base]{save}} for details on saving).}
 
 \item{\ldots}{Other arguments passed to internal functions.}
 }
 \value{
-Generates a minimal .rda regular expression library.
+Generates a minimal .rda regular expression library.  To load the
+.rda file use \code{\link[base]{load}}.
 }
 \description{
-Generate a minimal .rda regular expression library.
+Generate a .rda regular expression lists.
 }
 \examples{
 \dontrun{
 library_list(system.file("sample", package = "regextools"),
-    document = FALSE, install = FALSE)
+     document = FALSE, install = FALSE)
+
+sample             ## sample is a base R function
+load("sample.rda")
+sample             ## sample is now oerwritten witht he sample regex list
+rm(sample)         ## remove the list (restore default sample)
 }
 }
 \seealso{
-\code{\link[base]{save}}
+\code{\link[base]{save}},
+\code{\link[base]{base}}
 }
 

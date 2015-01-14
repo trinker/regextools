@@ -3,7 +3,7 @@
 #' Generate a regular expression library package vignette or Rmd/html/md document.
 #' 
 #' @param path The path to the regular expression library package.
-#' @param out The directory to output the  documents.
+#' @param out The directory to output the documents.
 #' @param is.vignette logical.  Is this an actual package vignette or rendered 
 #' html/md reference document.
 #' @param include.html logical.  If \code{TRUE} an .html rendering of the .Rmd 
@@ -14,6 +14,8 @@
 #' \href{http://rmarkdown.rstudio.com/html_document_format.html#appearance-and-style}{RStudio Themes}).
 #' @param iframe logical If \code{TRUE} the \href{https://www.debuggex.com/}{Debuggex} 
 #' is included as an iframe rather than a link.
+#' @param quiet logical.  If \code{FALSE} \code{\link[rmarkdown]{render}} does
+#' not print to the console.
 #' @param \ldots Other arguments passed to internal functions.
 #' @return Generates a .Rmd document and optionally .html/.md versions.
 #' @export
@@ -25,7 +27,7 @@
 #' }
 library_vignette <- function(path, out = file.path(path, "vignette"), 
     is.vignette = TRUE, include.html = !is.vignette, include.md = FALSE, 
-    theme = "cerulean",  iframe = FALSE, ...){
+    theme = "cerulean",  iframe = FALSE, quiet = TRUE, ...){
 
     input <- suppressWarnings(readLines(system.file(sprintf(
         "templates/vignette_temp%s.txt", ifelse(is.vignette, "", "2")), 
@@ -65,7 +67,7 @@ library_vignette <- function(path, out = file.path(path, "vignette"),
         paste(
             paste0("# ", x[["title"]][[1]],
                 "\n\n", x[["description"]][[1]]),
-            paste("\n\n## Debuggex Diagram\n\n", 
+            paste("\n\n### Debuggex Diagram\n\n", 
                 if (iframe) {
                     sprintf("<iframe src=\"%s\" height=\"500\" width=\"120%s\"></iframe>", y, "%")
                 } else {
@@ -76,7 +78,7 @@ library_vignette <- function(path, out = file.path(path, "vignette"),
                 "", 
                 paste("\n\n### Details\n\n", x[["details"]][[1]])
             ),
-            paste0("\n\n## Examples\n\n```{r}", x[["examples"]][[1]], "```\n"), 
+            paste0("\n\n### Examples\n\n```{r}", x[["examples"]][[1]], "```\n"), 
         collapse="\n")
     }, split(regsinfo, nrow(regsinfo)), debuggex_links)
 
@@ -86,10 +88,10 @@ library_vignette <- function(path, out = file.path(path, "vignette"),
 
     ## Convert to .html and .md
     if (include.html && !is.vignette){
-        rmarkdown::render(vignrmd)
+        rmarkdown::render(vignrmd, "html_document", quiet = quiet)
     }
     if (include.md && !is.vignette){
-        rmarkdown::render(vignrmd, output_file = gsub("\\.Rmd$", "\\.md", vignrmd))
+        rmarkdown::render(vignrmd, "md_document", quiet = quiet)
     }
     
     if(file.exists(vignrmd)) message("Vignette Generated:\n", out)

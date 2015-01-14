@@ -1,24 +1,32 @@
-#' Regular Expression Minimal .rda Library 
+#' Generate Regular Expression .rda  
 #' 
-#' Generate a minimal .rda regular expression library.
+#' Generate a .rda regular expression lists.
 #' 
 #' @param path The path to the regular expression library package.
-#' @param out The directory to output the  documents.
+#' @param out The file path to output the .rda file (see 
+#' \code{\link[base]{save}} for details on saving).
 #' @param \ldots Other arguments passed to internal functions.
-#' @return Generates a minimal .rda regular expression library.
+#' @return Generates a minimal .rda regular expression library.  To load the 
+#' .rda file use \code{\link[base]{load}}.
 #' @export
-#' @seealso \code{\link[base]{save}}
+#' @seealso \code{\link[base]{save}},
+#' \code{\link[base]{base}}
 #' @examples
 #' \dontrun{
 #' library_list(system.file("sample", package = "regextools"), 
-#'     document = FALSE, install = FALSE)
+#'      document = FALSE, install = FALSE)
+#' 
+#' sample             ## sample is a base R function
+#' load("sample.rda")
+#' sample             ## sample is now oerwritten witht he sample regex list
+#' rm(sample)         ## remove the list (restore default sample)
 #' }
 library_list <- function(path, out = NULL, ...){
 
     ## Document and Install package path
     build_install(path = path, ...)
 
-    ## grab the regx meta info
+    ## grab the regex meta info
     regsmeta <- grab_regexpr_meta(path)
 
     ## grab the regexes

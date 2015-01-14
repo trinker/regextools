@@ -6,5 +6,8 @@ output:
   html_document:
     toc: true
     theme: %s
-    number_sections: true
+    toc_depth: 1
+  md_document:
+    toc: true
+    toc_depth: 1
 ---

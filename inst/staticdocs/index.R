@@ -3,6 +3,8 @@ library(staticdocs)
 sd_section("Regular Expression Library Tools",
   "Function for constructing and testing regular expressions.",
   c(
+      "library_list",
+      "library_minimal",
       "library_vignette", 
       "library_template"
   )
