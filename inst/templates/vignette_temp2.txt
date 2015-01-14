@@ -3,12 +3,8 @@ title: "%s Regular Expression Library Vignette"
 author: "%s"
 date: "`r Sys.Date()`"
 output: 
-  rmarkdown::html_vignette
+  html_document:
     toc: true
     theme: %s
     number_sections: true
-vignette: >
-  %s\VignetteIndexEntry{%s}
-  %s\VignetteEngine{knitr::rmarkdown}
-  \usepackage[utf8]{inputenc}
 ---

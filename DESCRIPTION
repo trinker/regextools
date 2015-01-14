@@ -7,7 +7,11 @@ Author: Tyler Rinker <tyler.rinker@gmail.com>
 Maintainer: Tyler Rinker <tyler.rinker@gmail.com>
 Depends:
     R (>= 3.1.0)
-Imports: devtools, httr, jsonlite, rmarkdown    
+Imports: 
+    devtools, 
+    httr, 
+    jsonlite, 
+    rmarkdown (>= 0.4.2)
 Suggests:
     testthat,
     qdapRegex (>= 0.2.0),

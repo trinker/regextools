@@ -51,6 +51,7 @@ build_install <- function(path, document = TRUE, install = TRUE, ...){
     }
 }
 
+
 ## Helper to grab regular expression info and return formated dataframe of text
 grab_regexpr_info <- function(path){
 
@@ -76,20 +77,22 @@ grab_regexpr_info <- function(path){
         ## grab the title, description, details, examples, and usage tags    
         title <- right_brace_unkey(rm_white_(grabber_("title")))
         description <- right_brace_unkey(rm_white_(grabber_("description")))
-        details <- right_brace_unkey(rm_white_(grabber_("details")))
+        details <- grabber_("details")
+        details <- ifelse(is.na(grabber_("details")), NA, 
+            convert_tex2markdown(right_brace_unkey(rm_white_(details))))
         examples <- right_brace_unkey(grabber_("examples"))
         regexpr <- right_brace_unkey(unlist(strsplit(gsub("^\n+|\n+$", "", grabber_("usage")), "\n")))
  
         ## output as a named list with descriptiion/details converted to markdown   
         list(title = title, description = convert_tex2markdown(description), 
-            details = convert_tex2markdown(details), 
-            examples = examples, regexpr = regexpr)
+            details = details, examples = examples, regexpr = regexpr)
     
     }))
       
     ## make into a dataframe of regex info to grab pieces from later
     data.frame(do.call(rbind, out[!sapply(out, is.null)]))
 }
+
 
 ## Closure to set the latex elements being searched for
 grabber <- function(x) {
