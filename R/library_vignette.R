@@ -17,8 +17,10 @@
 #' @export
 #' @seealso \code{\link[rmarkdown]{render}}
 #' @examples
+#' \dontrun{
 #' library_vignette(system.file("sample", package = "regextools"), "vignette", 
 #'     include.html=TRUE, document = FALSE, install = FALSE)
+#' }
 library_vignette <- function(path, out = file.path(path, "vignette"), 
     is.vignette = TRUE, include.html = !is.vignette, include.md = FALSE, 
     theme = "cerulean",  ...){

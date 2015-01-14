@@ -2,7 +2,7 @@
 % Please edit documentation in R/library_vignette.R
 \name{library_vignette}
 \alias{library_vignette}
-\title{Title}
+\title{Regular Expression Library Documentation}
 \usage{
 library_vignette(path, out = file.path(path, "vignette"),
   is.vignette = TRUE, include.html = !is.vignette, include.md = FALSE,
@@ -31,11 +31,13 @@ is generated.}
 Generates a .Rmd document and optionally .html/.md versions.
 }
 \description{
-Description
+Generate a regular expression library package vignette or Rmd/html/md document.
 }
 \examples{
+\dontrun{
 library_vignette(system.file("sample", package = "regextools"), "vignette",
     include.html=TRUE, document = FALSE, install = FALSE)
+}
 }
 \seealso{
 \code{\link[rmarkdown]{render}}
