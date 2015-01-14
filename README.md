@@ -38,6 +38,7 @@ You are welcome to:
 | Function             |  Description         |
 |----------------------|----------------------|
 | `library_list`  | Create List of Regular Expressions |
+| `library_minimal` | Create List of Regular Expressions + HTML Documentation|
 | `library_vignette`  | Create Vignette from **roxygen2** Markup | 
 | `library_template`   | Generate a Regular Expression Package Library  |   
 | `test_extract`  | Unit Testing: Check if Regular Expression *Extracts* as Expected | 
