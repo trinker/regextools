@@ -80,7 +80,7 @@ library_vignette <- function(path, out = file.path(path, "vignette"),
 
     ## Convert to .html and .md
     if (include.html && !is.vignette){
-        rmarkdown::render(vignrmd, output_file = gsub("\\.Rmd$", "\\.html", vignrmd))
+        rmarkdown::render(vignrmd)
     }
     if (include.md && !is.vignette){
         rmarkdown::render(vignrmd, output_file = gsub("\\.Rmd$", "\\.md", vignrmd))
