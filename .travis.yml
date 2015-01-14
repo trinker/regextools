@@ -5,6 +5,15 @@ before_install:
   - chmod 755 ./travis-tool.sh
   - ./travis-tool.sh bootstrap
 install:
+  # Install binary pandoc from Rstudio
+  - mkdir -p $HOME/opt/pandoc
+  - curl -O https://s3.amazonaws.com/rstudio-buildtools/pandoc-1.12.3.zip
+  - unzip -j pandoc-1.12.3.zip pandoc-1.12.3/linux/debian/x86_64/pandoc
+      -d $HOME/opt/pandoc
+  - chmod +x $HOME/opt/pandoc/pandoc*
+  - rm pandoc-1.12.3.zip
+  - $HOME/opt/pandoc/pandoc --version
+
   - sh -e /etc/init.d/xvfb start
   - ./travis-tool.sh aptget_install r-cran-xml 
   - ./travis-tool.sh install_github hadley/devtools
