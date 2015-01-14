@@ -1,5 +1,7 @@
-**regextools**: A regular expression documentation, testing, and storage framework.
+regextools
 =======
+
+## A regular expression documentation, testing, and storage framework.
 
 [![Build Status](https://travis-ci.org/trinker/regextools.png?branch=master)](https://travis-ci.org/trinker/regextools)
 [![Coverage Status](https://coveralls.io/repos/trinker/regextools/badge.png?branch=master)](https://coveralls.io/r/trinker/regextools?branch=master)
