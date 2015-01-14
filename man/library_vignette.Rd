@@ -6,7 +6,7 @@
 \usage{
 library_vignette(path, out = file.path(path, "vignette"),
   is.vignette = TRUE, include.html = !is.vignette, include.md = FALSE,
-  theme = "cerulean", ...)
+  theme = "cerulean", iframe = FALSE, ...)
 }
 \arguments{
 \item{path}{The path to the regular expression library package.}
@@ -24,6 +24,9 @@ is generated.}
 
 \item{theme}{A valid Bootstrap theme (see:
 \href{http://rmarkdown.rstudio.com/html_document_format.html#appearance-and-style}{RStudio Themes}).}
+
+\item{iframe}{logical If \code{TRUE} the \href{https://www.debuggex.com/}{Debuggex}
+is included as an iframe rather than a link.}
 
 \item{\ldots}{Other arguments passed to internal functions.}
 }

@@ -12,6 +12,8 @@
 #' is generated.
 #' @param theme A valid Bootstrap theme (see: 
 #' \href{http://rmarkdown.rstudio.com/html_document_format.html#appearance-and-style}{RStudio Themes}).
+#' @param iframe logical If \code{TRUE} the \href{https://www.debuggex.com/}{Debuggex} 
+#' is included as an iframe rather than a link.
 #' @param \ldots Other arguments passed to internal functions.
 #' @return Generates a .Rmd document and optionally .html/.md versions.
 #' @export
@@ -23,7 +25,7 @@
 #' }
 library_vignette <- function(path, out = file.path(path, "vignette"), 
     is.vignette = TRUE, include.html = !is.vignette, include.md = FALSE, 
-    theme = "cerulean",  ...){
+    theme = "cerulean",  iframe = FALSE, ...){
 
     input <- suppressWarnings(readLines(system.file(sprintf(
         "templates/vignette_temp%s.txt", ifelse(is.vignette, "", "2")), 
@@ -64,7 +66,11 @@ library_vignette <- function(path, out = file.path(path, "vignette"),
             paste0("# ", x[["title"]][[1]],
                 "\n\n", x[["description"]][[1]]),
             paste("\n\n## Debuggex Diagram\n\n", 
-                sprintf("<a href=\"%s\" target=\"_blank\">%s</a>", y, y)
+                if (iframe) {
+                    sprintf("<iframe src=\"%s\" height=\"500\" width=\"120%s\"></iframe>", y, "%")
+                } else {
+                    sprintf("<a href=\"%s\" target=\"_blank\">%s</a>", y, y)
+                }
             ),
             ifelse(is.na(x[["details"]][[1]]), 
                 "", 
