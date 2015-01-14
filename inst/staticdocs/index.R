@@ -1,5 +1,14 @@
 library(staticdocs)
 
+sd_section("Regular Expression Library Tools",
+  "Function for constructing and testing regular expressions.",
+  c(
+      "library_vignette", 
+      "library_template"
+  )
+)
+
+
 sd_section("Unit Testing Regular Expressions",
   "Function for constructing and testing regular expressions.",
   c(
