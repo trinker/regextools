@@ -16,3 +16,4 @@ inst/build.R
 inst/regextools_logo/regextools.pptx.pptx
 ^.*\.Rprofile$
 README.Rmd
+README.R

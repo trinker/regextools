@@ -55,9 +55,3 @@ You are welcome to:
 | `test_split`  |  Unit Testing: Check if Regular Expression *Splits* as Expected |
 | `test_valid` |  Unit Testing: Check if Regular Expression is *Valid* |   
 
-## Examples
-
-
-```
-## Under Construction...
-```
