@@ -4,7 +4,7 @@
 \alias{library_vignette}
 \title{Regular Expression Library Documentation}
 \usage{
-library_vignette(path, out = file.path(path, "vignette"),
+library_vignette(path, out = file.path(path, "vignettes"),
   is.vignette = TRUE, include.html = !is.vignette, include.md = FALSE,
   theme = "cerulean", iframe = FALSE, quiet = TRUE, ...)
 }

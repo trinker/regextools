@@ -25,7 +25,7 @@
 #' library_vignette(system.file("sample", package = "regextools"), "vignette", 
 #'     is.vignette = FALSE, include.html=TRUE, document = FALSE, install = FALSE)
 #' }
-library_vignette <- function(path, out = file.path(path, "vignette"), 
+library_vignette <- function(path, out = file.path(path, "vignettes"), 
     is.vignette = TRUE, include.html = !is.vignette, include.md = FALSE, 
     theme = "cerulean",  iframe = FALSE, quiet = TRUE, ...){
 

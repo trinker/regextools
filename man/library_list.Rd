@@ -28,7 +28,7 @@ library_list(system.file("sample", package = "regextools"),
 
 sample             ## sample is a base R function
 load("sample.rda")
-sample             ## sample is now oerwritten witht he sample regex list
+sample             ## sample is now overwritten with the sample regex list
 rm(sample)         ## remove the list (restore default sample)
 }
 }

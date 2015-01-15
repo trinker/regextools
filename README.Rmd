@@ -45,7 +45,7 @@ You are welcome to:
 
 ```{r, echo=FALSE, results='asis', warning=FALSE}
 library(regextools)
-thefuns <- readLines("inst/functions_table/functions.R")
+thefuns <- readLines("vignettes/functions_table/functions.R")
 cat(paste(thefuns, collapse="\n"))
 ```
 
