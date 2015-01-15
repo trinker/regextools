@@ -86,7 +86,7 @@ library_vignette(system.file("sample", package = "regextools"), "vignette",
     is.vignette = FALSE, include.html=TRUE, document = FALSE, install = FALSE)
 ```
 
-<iframe src="sample.html" height="400", width="100%"></iframe>
+<iframe src="http://trinker.github.io/regextools/vignettes/sample.html" height="400", width="100%"></iframe>
 
 ### Storage
 
