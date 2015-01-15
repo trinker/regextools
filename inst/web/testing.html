@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<title>test_extract. regextools 0.0.1</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="">
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
+<link href="css/highlight.css" rel="stylesheet">
+<link href="css/staticdocs.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+  </head>
+
+  <body>
+    <div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="#">regextools 0.0.1</a>
+      <div class="nav">
+        <ul class="nav">
+          <li><a href="index.html"><i class="icon-home icon-white"></i> Index</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="container">
+      <header>
+        
+      </header>
+      
+      <h1>Is Expression Valid and Does It Extract/Remove/Split as Expected?</h1>
+
+<div class="row">
+  <div class="span8">
+    <h2>Usage</h2>
+    <pre><div>test_extract(regex, input, output)</div>
+<div>test_remove(regex, input, output)</div>
+<div>test_split(regex, input, output)</div>
+<div>test_valid(regex)</div></pre>
+    
+    <h2>Arguments</h2>
+    <dl>
+      <dt>regex</dt>
+      <dd>A regular expression to test.</dd>
+      <dt>input</dt>
+      <dd>The intput string(s) to extract/remove/split from.</dd>
+      <dt>output</dt>
+      <dd>The desired output of:
+<dl>
+<dt>extract</dt><dd><code>regmatches(input, gregexpr(regex, input, perl = TRUE))</code></dd>
+<dt>remove</dt><dd><code>gsub(regex, "", input, perl = TRUE)</code></dd>
+<dt>split</dt><dd><code>strsplit(input, regex, perl = TRUE)</code></dd>
+</dl>
+</dd>
+    </dl>
+    
+    <div class="Is Expression Valid and Does It Extract/Remove/Split as Expected?">
+      <h2>Is Expression Valid and Does It Extract/Remove/Split as Expected?</h2>
+      
+    </div>
+
+    <div class="Is Expression Valid and Does It Extract/Remove/Split as Expected?">
+      <h2>Is Expression Valid and Does It Extract/Remove/Split as Expected?</h2>
+      
+    </div>
+
+    <div class="Value">
+      <h2>Value</h2>
+      
+      <p>Returns the results of <code><a href='http://www.inside-r.org/packages/cran/base/docs/all.equal'>all.equal</a></code> for the
+<code>input</code> and desired <code>output</code>.</p>
+  
+    </div>
+
+    <div class="Description">
+      <h2>Description</h2>
+      
+      <p>A logical test of a regular expression's validity, extraction, removal,
+splitting results.  These functions are useful for unit testing of regular
+expressions.</p>
+  
+    </div>
+
+    <div class="Details">
+      <h2>Details</h2>
+      
+      <p>These functions are inspired by Hadely Wickham's <span class = "pkg">testthat</span>
+package.  They can be used with <span class = "pkg">testthat</span> to test that regular
+expressions are valid, extracting, removing, and splitting as expected.  The
+user may create their own tests and utilize <code><a href='http://www.inside-r.org/packages/cran/base/docs/all.equal'>all.equal</a></code> or
+<code><a href='http://www.inside-r.org/packages/cran/testthat/docs/equals'>expect_equal</a></code> to ensure the expression is acting as
+desired.</p>
+  
+    </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'>test_extract(&quot;\\w+&quot;, &quot;I like candy.&quot;, list(c(&quot;I&quot;, &quot;like&quot;, &quot;candy&quot;)))
+</div>
+<div class='output'>[1] TRUE
+</div>
+<div class='input'>
+test_remove(&quot;^\\s+|\\s+$&quot;, &quot; I like candy &quot;, &quot;I like candy&quot;)
+</div>
+<div class='output'>[1] TRUE
+</div>
+<div class='input'>
+test_split(&quot;(?&lt;=[.?!])\\s+&quot;, &quot;I see! When? Oh that&#39;s good.&quot;,
+    list(c(&quot;I see!&quot;, &quot;When?&quot;, &quot;Oh that&#39;s good.&quot;)))
+</div>
+<div class='output'>[1] TRUE
+</div>
+<div class='input'>
+test_valid(&quot;\\w+&quot;)
+</div>
+<div class='output'>[1] TRUE
+</div></pre>
+  </div>
+  <div class="span4">
+    <!-- <ul>
+      <li>test_extract</li><li>test_remove</li><li>test_split</li><li>test_valid</li>
+    </ul>
+    <ul>
+      <li>extract</li><li>remove</li><li>test</li>
+    </ul> -->
+      
+    <h2>See also</h2>
+    
+<code><a href='http://www.inside-r.org/packages/cran/base/docs/all.equal'>all.equal</a></code>,
+<code><a href='http://www.inside-r.org/packages/cran/base/docs/grep'>gsub</a></code>,
+<code><a href='http://www.inside-r.org/packages/cran/base/docs/grep'>gregexpr</a></code>,
+<code><a href='http://www.inside-r.org/packages/cran/base/docs/regmatches'>regmatches</a></code>,
+<code><a href='http://www.inside-r.org/packages/cran/devtools/docs/test'>test</a></code>
+
+        
+  </div>
+</div>
+      
+      <footer>
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with <a href="http://twitter.github.com/bootstrap">bootstrap</a>.</p>
+      </footer>
+    </div>
+  </body>
+</html>

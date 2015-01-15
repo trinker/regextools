@@ -10,7 +10,7 @@ regextools
 
 <img src="inst/regextools_logo/r_regextools.png" width="20%", alt="">  
 
-**regextools** extends the **devtools**, **roxygen2**, & **testthat** packages to regular expressions library documentation, testing, and storage.  The framework assumes the user will document and store regular expressions as an R package via the **devtools**, **roxygen2**, & **testthat** packages.  This extends these existing frameworks to work make regular expression management easier for long term documentation, maintenance, and 
+[**regextools**](http://trinker.github.io/regextools_dev) extends the **devtools**, **roxygen2**, & **testthat** packages to regular expressions library documentation, testing, and storage.  The framework assumes the user will document and store regular expressions as an R package via the **devtools**, **roxygen2**, & **testthat** packages.  This extends these existing frameworks to work make regular expression management easier for long term documentation, maintenance, and 
 testing.  The only change to these existing frameworks is that the user must include a tag `@section Regex: TRUE` in the **roxygen2** markup, indicating the object is a regular expression.  
 
 **regextools** is a philosophy of regular expression management that sees unit testing and transparency of test coverage as an essential part of maintaining a regular expression library.  In the spirit of transparent unit testing, **regextools** adds functions to test regular expressions, extending the **testthat** package.  This avoids unforeseen breaks due to changes in a regular expression and explicitally describes the expression's intended behavior.  **regextools** offers a template system that encourages this transparent unit testing philosophy through the use of [GitHub](https://github.com/), [Travis-CI](https://travis-ci.org), and the [**covr**](https://github.com/jimhester/covr) package to indicate coverage in the GitHub README.md.  
@@ -32,6 +32,7 @@ devtools::install_github("trinker/regextools")
 ## Help
 
 - [Web Page](http://trinker.github.com/regextools/)     
+- [HTML Vignette: Introduction to regextools](http://trinker.github.io/regextools/vignettes/introduction.html)       
 - [Package PDF Help Manual](https://dl.dropboxusercontent.com/u/61803503/regextools.pdf)   
 
 ## Contact

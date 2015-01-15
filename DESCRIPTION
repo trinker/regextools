@@ -13,10 +13,12 @@ Imports:
     jsonlite, 
     rmarkdown (>= 0.4.2)
 Suggests:
+    knitr,
     testthat,
     qdapRegex (>= 0.2.0),
     regexr
 LazyData: TRUE
+VignetteBuilder: knitr
 Description: regextools aims to provide tools to maintain regular expression
     libraries.  Users can create documentation, conduct unit testing, and
     compile a regular expression library in ways that are similar to the way

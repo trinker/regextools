@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<title>library_template. regextools 0.0.1</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="">
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/bootstrap-responsive.css" rel="stylesheet">
+<link href="css/highlight.css" rel="stylesheet">
+<link href="css/staticdocs.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+  </head>
+
+  <body>
+    <div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="#">regextools 0.0.1</a>
+      <div class="nav">
+        <ul class="nav">
+          <li><a href="index.html"><i class="icon-home icon-white"></i> Index</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="container">
+      <header>
+        
+      </header>
+      
+      <h1>Regular Expression Library Package Template</h1>
+
+<div class="row">
+  <div class="span8">
+    <h2>Usage</h2>
+    <pre><div>library_template(path, name&nbsp;=&nbsp;getOption("name"), email&nbsp;=&nbsp;getOption("email"), news&nbsp;=&nbsp;TRUE, readme&nbsp;=&nbsp;TRUE, rstudio&nbsp;=&nbsp;TRUE, gitignore&nbsp;=&nbsp;TRUE, testthat&nbsp;=&nbsp;TRUE, travis&nbsp;=&nbsp;TRUE, coverage&nbsp;=&nbsp;TRUE, github.user&nbsp;=&nbsp;getOption("github.user"), samples&nbsp;=&nbsp;TRUE)</div></pre>
+    
+    <h2>Arguments</h2>
+    <dl>
+      <dt>path</dt>
+      <dd>location to create new regular expression library package. The
+last component of the path will be used as the package name.</dd>
+      <dt>name</dt>
+      <dd>A named vector that minimally contains the user's first and last
+name (e.g., <code>c(first="Tyler", last="Rinker"))</code>).  This can be set in the
+user's <code>options</code> in the &#145;<span class = "file">.Rprofile</span>&#146;; for example: 
+<code>options(name = c(first="Tyler", middle = "W.", last="Rinker"))</code>.</dd>
+      <dt>email</dt>
+      <dd>An email address to use for <b>CRAN</b> maintainer.  This can be
+set in the user's <code>options</code> in the &#145;<span class = "file">.Rprofile</span>&#146;; for example: 
+<code>options(email = "tyler.rinker@gmail.com")</code>.</dd>
+      <dt>news</dt>
+      <dd>logical.  If <code>TRUE</code> a &#145;<span class = "file">NEWS</span>&#146; file is generated.</dd>
+      <dt>readme</dt>
+      <dd>logical.  If <code>TRUE</code> a &#145;<span class = "file">README.md</span>&#146; file is generated.</dd>
+      <dt>rstudio</dt>
+      <dd>logical.  If <code>TRUE</code> it is assumed
+<a href = 'http://www.rstudio.com/'>RStudio</a> will be used and a &#145;<span class = "file">xxx.proj</span>&#146;
+file is generated.</dd>
+      <dt>gitignore</dt>
+      <dd>logical.  If <code>TRUE</code> a &#145;<span class = "file">.gitignore</span>&#146; file is generated.</dd>
+      <dt>testthat</dt>
+      <dd>logical.  If <code>TRUE</code> it is assumed
+<a href = 'http://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf'><span class = "pkg">testthat</span></a>
+will be used and a &#145;<span class = "file">test</span>&#146; subfolder with appropriate <span class = "pkg">testthat</span>
+subdirectories and files will be created.</dd>
+      <dt>travis</dt>
+      <dd>logical.  If <code>TRUE</code> it is assumed
+<a href = 'https://travis-ci.org'>Travis-CI</a> will be used and a &#145;<span class = "file">travis.yml</span>&#146;
+file is generated.  For more on managing a &#145;<span class = "file">travis.yml</span>&#146; with
+<span class = "pkg">R</span> see: <a href = 'https://github.com/craigcitro/r-travis'>https://github.com/craigcitro/r-travis</a>.</dd>
+      <dt>coverage</dt>
+      <dd>logical.  If <code>TRUE</code> it is assumed
+<a href = 'https://github.com/jimhester/covr'><span class = "pkg">covr</span></a> will be used.  This
+information will be added to the &#145;<span class = "file">travis.yml</span>&#146;.</dd>
+      <dt>github.user</dt>
+      <dd>The user's <a href = 'https://github.com/'>GitHub</a> user name.
+This can be set in the user's <code>options</code> in the &#145;<span class = "file">.Rprofile</span>&#146;; for
+example:  
+<code>options(github.user = "trinker")</code>.</dd>
+      <dt>samples</dt>
+      <dd>logical.  If <code>TRUE</code> a sample &#145;<span class = "file">.R</span>&#146; regular expression
+file will be placed in the &#145;<span class = "file">R</span>&#146; directory.  Additionally, if
+<code>testthat = TRUE</code>, a sample &#145;<span class = "file">.R</span>&#146; unit test will be placed in the
+&#145;<span class = "file">./tests/testthat</span>&#146; directory.</dd>
+    </dl>
+    
+    <div class="Regular Expression Library Package Template">
+      <h2>Regular Expression Library Package Template</h2>
+      
+    </div>
+
+    <div class="Regular Expression Library Package Template">
+      <h2>Regular Expression Library Package Template</h2>
+      
+    </div>
+
+    <div class="Description">
+      <h2>Description</h2>
+      
+      <p>This function creates a package template to manage regular expressions.  It
+utiizes a framework with defaults that expects the user to use <span class = "pkg">testthat</span>
+to test the library's reguar expressions.</p>
+  
+    </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'>## &lt;strong&gt;Not run&lt;/strong&gt;: 
+# library_template(&quot;DELETE_ME&quot;)
+# ## &lt;strong&gt;End(Not run)&lt;/strong&gt;
+</div></pre>
+  </div>
+  <div class="span4">
+    <!-- <ul>
+      <li>library_template</li>
+    </ul>
+    <ul>
+      <li>template</li>
+    </ul> -->
+      
+        
+  </div>
+</div>
+      
+      <footer>
+      <p class="pull-right"><a href="#">Back to top</a></p>
+<p>Built by <a href="https://github.com/hadley/staticdocs">staticdocs</a>. Styled with <a href="http://twitter.github.com/bootstrap">bootstrap</a>.</p>
+      </footer>
+    </div>
+  </body>
+</html>
