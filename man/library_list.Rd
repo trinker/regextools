@@ -4,13 +4,16 @@
 \alias{library_list}
 \title{Generate Regular Expression .rda}
 \usage{
-library_list(path, out = NULL, ...)
+library_list(path, out = NULL, name = NULL, ...)
 }
 \arguments{
 \item{path}{The path to the regular expression library package.}
 
 \item{out}{The file path to output the .rda file (see
 \code{\link[base]{save}} for details on saving).}
+
+\item{name}{The name to assign the list to and to use for the .rda file.  If
+\code{NULL} the package name is used.}
 
 \item{\ldots}{Other arguments passed to internal functions.}
 }
