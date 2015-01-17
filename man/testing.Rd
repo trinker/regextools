@@ -7,13 +7,13 @@
 \alias{test_valid}
 \title{Is Expression Valid and Does It Extract/Remove/Split as Expected?}
 \usage{
-test_extract(regex, input, output)
+test_extract(regex, input, output, stringi = FALSE)
 
-test_remove(regex, input, output)
+test_remove(regex, input, output, stringi = FALSE)
 
-test_split(regex, input, output)
+test_split(regex, input, output, stringi = FALSE)
 
-test_valid(regex)
+test_valid(regex, stringi = FALSE)
 }
 \arguments{
 \item{regex}{A regular expression to test.}
@@ -26,6 +26,10 @@ test_valid(regex)
   \item{remove}{\code{gsub(regex, "", input, perl = TRUE)}}
   \item{split}{\code{strsplit(input, regex, perl = TRUE)}}
 }}
+
+\item{lofical.}{If \code{TRUE} \pkg{stringi}'s implementation of reguar
+expressions is utilized for testing.  This allows for more flexible use of
+regular expressions.}
 }
 \value{
 Returns the results of \code{\link[base]{all.equal}} for the

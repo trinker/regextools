@@ -11,7 +11,8 @@ Imports:
     devtools, 
     httr, 
     jsonlite, 
-    rmarkdown (>= 0.4.2)
+    rmarkdown (>= 0.4.2),
+    stringi (>= 0.4-1)
 Suggests:
     knitr,
     testthat,

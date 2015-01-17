@@ -20,6 +20,27 @@ get_split <- function(regex, input){
 
 }
 
+get_extract_stri <- function(regex, input){
+
+    input2 <- stringi::stri_extract_all_regex(input, regex)
+    dput(input2)
+
+}
+
+get_remove_stri <- function(regex, input){
+
+    input2 <- stringi::stri_replace_all_regex(input, regex, "")
+    dput(input2)
+}
+
+
+get_split_stri <- function(regex, input){
+
+    input2 <- stringi::stri_split_regex(input, regex)
+    dput(input2)
+
+}
+
 ## multiple gsub
 rt_msub <-
 function (pattern, replacement, text.var, fixed = TRUE, order.pattern = fixed, 

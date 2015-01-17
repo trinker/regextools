@@ -12,6 +12,9 @@
 #'   \item{remove}{\code{gsub(regex, "", input, perl = TRUE)}}
 #'   \item{split}{\code{strsplit(input, regex, perl = TRUE)}}
 #' }
+#' @param lofical.  If \code{TRUE} \pkg{stringi}'s implementation of reguar 
+#' expressions is utilized for testing.  This allows for more flexible use of
+#' regular expressions.
 #' @return Returns the results of \code{\link[base]{all.equal}} for the 
 #' \code{input} and desired \code{output}.
 #' @keywords test extract remove
@@ -37,28 +40,25 @@
 #'     list(c("I see!", "When?", "Oh that's good."))) 
 #'     
 #' test_valid("\\w+")     
-test_extract <- function(regex, input, output){
+test_extract <- function(regex, input, output, stringi = FALSE){
 
-    input2 <- regmatches(input, gregexpr(regex, input, perl = TRUE))
+    if (stringi){
+        input2 <- stringi::stri_extract_all_regex(input, regex)
+    } else {
+        input2 <- regmatches(input, gregexpr(regex, input, perl = TRUE))
+    }
     all.equal(input2, output)
-
 }
 
 #' @export
 #' @rdname testing
-test_remove <- function(regex, input, output){
+test_remove <- function(regex, input, output, stringi = FALSE){
 
-    input2 <- gsub(regex, "", input, perl = TRUE)
-    all.equal(input2, output)
-
-}
-
-
-#' @export
-#' @rdname testing
-test_split <- function(regex, input, output){
-
-    input2 <- strsplit(input, regex, perl = TRUE)
+    if (stringi){
+        input2 <- stringi::stri_replace_all_regex(input, regex, "")
+    } else {
+        input2 <- gsub(regex, "", input, perl = TRUE)
+    }
     all.equal(input2, output)
 
 }
@@ -66,9 +66,30 @@ test_split <- function(regex, input, output){
 
 #' @export
 #' @rdname testing
-test_valid <- function (regex) {
-    out <- suppressWarnings(try(gsub(regex, "", "hello", perl = TRUE), 
+test_split <- function(regex, input, output, stringi = FALSE){
+
+    if (stringi){
+        input2 <- stringi::stri_split_regex(input, regex)
+    } else {
+        input2 <- strsplit(input, regex, perl = TRUE)
+    }
+    all.equal(input2, output)
+
+}
+
+
+
+
+#' @export
+#' @rdname testing
+test_valid <- function (regex, stringi = FALSE) {
+
+    if (stringi){
+        out <- suppressWarnings(try(stringi::stri_replace_all_regex("hello", regex, ""), 
         silent = TRUE))
+    } else {
+        out <- suppressWarnings(try(gsub(regex, "", "hello", perl = TRUE), 
+        silent = TRUE))
+    }
     ifelse(inherits(out, "try-error"), FALSE, TRUE)
 }
-
