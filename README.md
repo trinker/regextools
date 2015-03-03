@@ -25,7 +25,7 @@ Download the [zip ball](https://github.com/trinker/regextools/zipball/master) or
 
 ```r
 if (!require("pacman")) install.packages("pacman")
-pacman::p_load_gh("trinker/qdapTools")
+pacman::p_load_gh("trinker/regextools")
 ```
 
 ## Help
